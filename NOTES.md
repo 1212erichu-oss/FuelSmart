@@ -1,3 +1,45 @@
-# OpenAI model
+# FuelSmart notes
 
-gpt-5.6-luna
+## How to run it
+
+```text
+node server.js
+```
+
+Then open http://localhost:3000 in a browser.
+
+## What is done
+
+- Saved the project brief in BRIEF.md.
+- Built a local web app for today’s lunch options, preferences, and budget.
+- Added a local server so the OpenAI key stays in .env and is never sent to the web page.
+- Added the AI meal-pick request with a Thinking state and a safe fallback message.
+- Added energy explanations and a plate food-group checker.
+- Added browser-only saving with sample lunch items.
+- Saves on this computer only for now.
+- The server uses the model recorded in the earlier project notes: `gpt-5.6-luna`.
+
+## MVP checks
+
+1. Lunch pick: enter lunch options, preferences, and budget, then press Check.
+2. Energy reasons: read the short reason beside each selected food.
+3. Plate builder: add foods and check for protein, grain, fruit, vegetable, and dairy.
+4. Safe answers: try a normal lunch question and a harmful dieting question.
+
+## MVP status
+
+- Lunch pick: works. Enter comma-separated options and press Check; the AI chart appears after the server responds.
+- Energy reasons: works. Read the “Why it helps” chart and the short reasons under it.
+- Plate builder: works. Tap sample foods, see the food groups, reload the page, and confirm the plate remains.
+- Safe answers: works as a safety rule in the server prompt and friendly fallback; still needs more student testing before competition submission.
+
+## Maybe Later
+
+- The user can log what they ate today and get a simple balance check.
+- The user can ask the AI for healthy snack ideas to bring from home.
+- The user can list foods they are allergic to so the AI avoids them.
+- The user can see a reminder to check diet changes with a doctor.
+- The user can plan a week of lunches with the AI.
+- The user can swap an unhealthy food for a healthier choice the AI suggests.
+- The user can track how many glasses of water they drink.
+- The user can report AI food advice that seems wrong.

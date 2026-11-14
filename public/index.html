@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FuelSmart</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div class="brand-mark">F</div>
+      <div><p class="eyebrow">School lunch helper</p><h1>FuelSmart</h1><p>Build a balanced lunch that helps you stay energized through the school day.</p></div>
+    </header>
+    <section class="notice"><strong>Friendly reminder:</strong> FuelSmart gives general ideas, not medical advice. Do not skip meals. Ask a trusted adult, doctor, or school nurse about allergies or health concerns.</section>
+    <section class="card main-card">
+      <div class="section-heading"><span class="step">01</span><div><h2>Make today’s lunch work for you</h2><p>Type the options you have, separated by commas.</p></div></div>
+      <form id="check-form">
+        <label for="lunch-options">Lunch options</label>
+        <input id="lunch-options" required placeholder="Example: pizza, salad, apple, milk">
+        <div class="row"><div><label for="preferences">Preferences <span>(optional)</span></label><input id="preferences" placeholder="Example: vegetarian, no spicy food"></div><div><label for="budget">Budget <span>(optional)</span></label><input id="budget" placeholder="Example: $3 or free lunch"></div></div>
+        <button id="check-button" type="submit">Check my balanced pick <span>→</span></button>
+      </form>
+      <div id="answer" class="answer"><p class="muted">Your short AI meal chart will appear here.</p></div>
+    </section>
+    <section class="grid">
+      <section class="card"><div class="section-heading"><span class="step">02</span><div><h2>Why foods give energy</h2><p>Tap a sample food to add it to your plate.</p></div></div><div id="food-choices" class="food-choices"></div></section>
+      <section class="card"><div class="section-heading"><span class="step">03</span><div><h2>Build your plate</h2><p>Your plate is saved in this browser.</p></div></div><ul id="plate-list" class="plate-list"></ul><div id="plate-status" class="plate-status"></div><p id="plate-message" class="plate-message"></p></section>
+    </section>
+    <footer>FuelSmart • Version 1 • Saves on this computer only for now</footer>
+  </main>
+  <script src="/storage.js"></script><script src="/app.js"></script>
+</body>
+</html>

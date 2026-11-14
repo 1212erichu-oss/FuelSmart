@@ -1,0 +1,9 @@
+{
+  "name": "fuelsmart",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A safe school lunch helper for the Presidential SI Challenge.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
