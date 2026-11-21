@@ -9,14 +9,14 @@ function renderPlate() {
   const groups = new Set(saved.plate.map((food) => food.group));
   const needed = ['protein', 'grain', 'fruit', 'vegetable', 'dairy'];
   $('#plate-list').innerHTML = saved.plate.length
-    ? saved.plate.map((food) => `<li><span>${escapeHtml(food.name)}</span><small>${escapeHtml(food.group)}</small></li>`).join('')
+    ? saved.plate.map((food) => `<li><div><strong>${escapeHtml(food.name)}</strong><p class="food-energy">${escapeHtml(food.energy)}</p></div><small>${escapeHtml(food.group)}</small></li>`).join('')
     : '<li class="muted">No foods added yet.</li>';
   $('#plate-status').innerHTML = needed.map((group) => `<span class="${groups.has(group) ? 'done' : ''}">${groups.has(group) ? '✓' : '○'} ${group}</span>`).join('');
   $('#plate-message').textContent = groups.size >= 3 ? 'Nice start. Add more groups when they are available.' : 'Try to include at least three different food groups.';
 }
 
 function renderFoodChoices() {
-  $('#food-choices').innerHTML = FuelStorage.sample.map((food, index) => `<button class="food-choice" data-index="${index}">${escapeHtml(food.name)}</button>`).join('');
+  $('#food-choices').innerHTML = FuelStorage.sample.map((food, index) => `<button class="food-choice" data-index="${index}"><strong>${escapeHtml(food.name)}</strong><span>${escapeHtml(food.energy)}</span></button>`).join('');
   document.querySelectorAll('.food-choice').forEach((button) => button.addEventListener('click', () => {
     const food = FuelStorage.sample[Number(button.dataset.index)];
     if (!saved.plate.some((item) => item.name === food.name)) saved.plate.push(food);
