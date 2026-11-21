@@ -40,7 +40,10 @@ $('#check-form').addEventListener('submit', async (event) => {
   try {
     const response = await fetch('/api/check', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ options, preferences: $('#preferences').value, budget: $('#budget').value }) });
     const answer = await response.json();
-    if (!response.ok) throw new Error(answer.error || 'Try again.');
+    if (!response.ok) {
+      const failure = answer.error || {};
+      throw new Error(failure.message || 'Try again.');
+    }
     showAnswer(answer);
   } catch (error) { $('#answer').innerHTML = `<p class="error">${escapeHtml(error.message || 'Please try again.')}</p>`; }
   finally { button.disabled = false; }

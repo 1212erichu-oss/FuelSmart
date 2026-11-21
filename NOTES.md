@@ -12,7 +12,9 @@ Then open http://localhost:3000 in a browser.
 
 - Saved the project brief in BRIEF.md.
 - Built a local web app for today’s lunch options, preferences, and budget.
-- Added a local server so the OpenAI key stays in .env and is never sent to the web page.
+- Added a local server so the OpenAI key stays on the server and is never sent to the web page.
+- The server gets the AI key through getKey() in getKey.js, which asks MindDo for a temporary key and caches it until expiresAt.
+- MindDo settings are placed in .env as KEYGEN_URL and KEYGEN_TOKEN; .env is ignored by Git.
 - Added the AI meal-pick request with a Thinking state and a safe fallback message.
 - Added energy explanations and a plate food-group checker.
 - Added browser-only saving with sample lunch items.
