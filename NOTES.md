@@ -19,7 +19,7 @@ Then open http://localhost:3000 in a browser.
 - Added energy explanations and a plate food-group checker.
 - Added browser-only saving with sample lunch items.
 - Saves on this computer only for now.
-- The server uses the model recorded in the earlier project notes: `gpt-5.6-luna`.
+- OpenAI model found through MindDo: `gpt-5.6-luna`.
 
 ## MVP checks
 
