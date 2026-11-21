@@ -5,7 +5,8 @@ let cached = null;
 
 function readSettings() {
   const file = path.join(__dirname, '.env');
-  const values = {};
+  const values = { KEYGEN_URL: process.env.KEYGEN_URL, KEYGEN_TOKEN: process.env.KEYGEN_TOKEN };
+  if (values.KEYGEN_URL && values.KEYGEN_TOKEN) return values;
   if (!fs.existsSync(file)) return values;
   for (const line of fs.readFileSync(file, 'utf8').split(/\r?\n/)) {
     if (!line || line.trim().startsWith('#') || !line.includes('=')) continue;

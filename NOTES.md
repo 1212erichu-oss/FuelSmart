@@ -8,6 +8,13 @@ node server.js
 
 Then open http://localhost:3000 in a browser.
 
+## How to put it online with Vercel
+
+- Vercel serves the page from `public/` and runs `api/check.js` as the server-side `/api/check` function.
+- In Vercel Project Settings → Environment Variables, add `KEYGEN_URL` and `KEYGEN_TOKEN` for the environments you use.
+- No other Vercel setting is needed for this project. Keep `.env` local and never upload it.
+- Browser saving still uses localStorage, so each browser keeps its own data.
+
 ## What is done
 
 - Saved the project brief in BRIEF.md.
