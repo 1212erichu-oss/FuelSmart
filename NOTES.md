@@ -37,7 +37,7 @@ Then open http://localhost:3000 in a browser.
 
 ## MVP status
 
-- Lunch pick: works. Enter comma-separated options and press Check; the AI chart appears after the server responds.
+- Lunch pick: works fully. Tested locally on November 20, 2026 with “pizza, apple, milk”; the AI returned a balanced chart and energy reasons.
 - Energy reasons: works. Read the “Why it helps” chart and the short reasons under it.
 - Plate builder: works. Tap sample foods, see the food groups, reload the page, and confirm the plate remains.
 - Safe answers: works as a safety rule in the server prompt and friendly fallback; still needs more student testing before competition submission.
